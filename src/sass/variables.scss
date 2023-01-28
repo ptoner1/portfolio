@@ -1,0 +1,36 @@
+// COLORS
+$color-primary: #ff9b30;
+$color-primary-light: #ffb900;
+$color-primary-dark: #ff7730;
+
+$color-secondary-light: #2998ff;
+$color-secondary-dark: #5643fa;
+
+$color-tertiary-light: #7ed56f;
+$color-tertiary-dark: #28b485;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-light-3: #ccc;
+$color-grey-dark-1: #999;
+$color-grey-dark-2: #777;
+$color-grey-dark-3: #333;
+$color-white: #fff;
+$color-black: #000;
+$color-black-light: #222;
+
+$page-break-1: 430px;
+$page-break-2: 700px;
+$page-break-3: 900px;
+
+// FONT
+$font-size-default: 1.6rem;
+
+
+// MIXINS
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}

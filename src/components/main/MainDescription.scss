@@ -1,0 +1,106 @@
+.project {
+    // background-color: grey;
+    padding: 0 1rem;
+    margin-bottom: -.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+
+    &__title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-right: 1rem;
+
+        &-title {
+            flex-grow: 1;
+        }
+
+        &__link {
+            height: 2rem;
+            width: 2rem;
+            filter: contrast(0);
+
+            &-icon {
+                height: 100%;
+                width: 100%;
+            }
+
+            &:hover {
+                scale: 1.1;
+                filter: contrast(0) brightness(1.5);
+            }
+        }
+    }
+
+    &__skills {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        align-items: start;
+
+        &-title {
+            translate: 0 -.6rem;
+        }
+
+        &-list {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            line-height: 0.7;
+            font-size: 1.4rem;
+
+            span {
+                font-size: 1.2rem;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    &__description {
+        flex-grow: 1;
+        display: -webkit-box;
+        max-width: 90vw;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    @media (min-width: $page-break-1) {
+        padding: 0;
+        margin-bottom: -1.5rem;
+
+        &__description {
+            -webkit-line-clamp: 7;
+        }
+    }
+
+    @media (min-width: 600px) {
+        &__description {
+            -webkit-line-clamp: 6;
+        }
+    }
+
+    @media (min-width: $page-break-2) {
+        &__description {
+            -webkit-line-clamp: 9;
+        }
+
+        &[screen='theater'] {
+            .project__description {
+                -webkit-line-clamp: 8;
+            }
+        }
+    }
+
+    @media (min-width: $page-break-3) {
+        &[screen='theater'] {
+            .project__description {
+                -webkit-line-clamp: 5;
+            }
+        }
+    }
+
+}

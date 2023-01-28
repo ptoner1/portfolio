@@ -1,0 +1,59 @@
+.portrait {
+    width: 100%;
+    max-width: 425px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: auto;
+    position: relative;
+    height: min-content;
+    transition: width .2s;
+
+    &__img {
+        width: 80%;
+        margin: auto;
+        position: relative;
+    }
+
+    &__filter {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 80%;
+        height: 100%;
+        translate: -50%;
+        z-index: 5;
+        background: linear-gradient(135deg,
+                var(--color-1) 0%,
+                var(--color-2) 100%);
+        opacity: .3;
+        transition: opacity .2s;
+
+        &:hover {
+            opacity: 0;
+        }
+    }
+
+    &__filter:hover~.portrait__border {
+        translate: 4% -4%;
+    }
+
+    &__border {
+        height: 100%;
+        width: 80%;
+        position: absolute;
+        z-index: -1;
+        border: 2px solid var(--color-2);
+        translate: 6% -6%;
+        transition: translate .2s .1s;
+    }
+
+    @media (min-width: $page-break-2) {
+        width: 90%;
+        grid-column: 1 / 2;
+
+        &[screen='theater'] {
+            grid-column: 1 / 3;
+        }
+    }
+}

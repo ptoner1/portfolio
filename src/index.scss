@@ -1,0 +1,30 @@
+@import 'sass/variables';
+@import 'sass/animations';
+@import 'sass/utils';
+
+@import 'App.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.3rem;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: $color-grey-light-3;
+
+  background-color: $color-grey-dark-3;
+
+  line-height: 1.6;
+  letter-spacing: .8px;
+  font-family: 'Inconsolata', 'Roboto', sans-serif;
+}
