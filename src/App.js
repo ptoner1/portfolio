@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Nav from './components/Nav';
 import Logo from './components/Logo.js';
 import { MainVideo, MainDescription, ProjectList, Portrait } from './components/main';
+import { colorlist } from './colors';
 
 function App() {
 
@@ -9,25 +10,38 @@ function App() {
   const [screen, setScreen] = useState('small');
   const [project, setProject] = useState('about')
 
+
+  // spent an hour on this function.  I love the color palettes it returns.
+  // function randomColors() {
+  //   const rand1 = Math.floor(Math.random() * 100 + 155);
+  //   const rand2 = Math.floor(Math.random() * 100 + 155);
+  //   const rand3 = Math.floor(Math.random() * 100 + 155);
+
+  //   const color1 = `rgb(${rand1}, ${rand2}, ${rand3})`;
+
+  //   const randomTwist = Math.floor(Math.random() * 3 + 1);
+  //   let rand4 = rand1 - 75;
+  //   let rand5 = rand2 - 75;
+  //   let rand6 = rand3 - 75;
+  //   if (randomTwist === 1 && rand1 > 155) rand4 = rand1 - 150;
+  //   if (randomTwist === 2 && rand2 > 155) rand5 = rand2 - 150;
+  //   if (randomTwist === 3 && rand3 > 155) rand6 = rand3 - 150;
+
+  //   const color2 = `rgb(${rand4}, ${rand5}, ${rand6})`
+
+  //   return [color1, color2]
+  // }
+
   function randomColors() {
-    const rand1 = Math.floor(Math.random() * 100 + 155);
-    const rand2 = Math.floor(Math.random() * 100 + 155);
-    const rand3 = Math.floor(Math.random() * 100 + 155);
-
-    const color1 = `rgb(${rand1}, ${rand2}, ${rand3})`;
-
-    const randomTwist = Math.floor(Math.random() * 3 + 1);
-    let rand4 = rand1 - 75;
-    let rand5 = rand2 - 75;
-    let rand6 = rand3 - 75;
-    if (randomTwist === 1 && rand1 > 155) rand4 = rand1 - 150;
-    if (randomTwist === 2 && rand2 > 155) rand5 = rand2 - 150;
-    if (randomTwist === 3 && rand3 > 155) rand6 = rand3 - 150;
-
-    const color2 = `rgb(${rand4}, ${rand5}, ${rand6})`
-
-    return [color1, color2]
+    const num = Math.floor(Math.random() * colorlist.length);
+    return colorlist[num]
   }
+
+  useEffect(() => {
+    const link = document.getElementById('favicon');
+    let num = Number(link.href.slice(-5, -4));
+    link.href = `/favicon${num}.svg`
+  }, [])
 
   useEffect(() => {
     const app = document.querySelector('.app');

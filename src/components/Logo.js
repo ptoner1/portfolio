@@ -1,7 +1,17 @@
-export default function Logo({ colors, randomColors, setColors }) {
+import { colorlist } from "../colors";
+
+export default function Logo({ colors, setColors }) {
+
+    function changeColors() {
+        const link = document.getElementById('favicon');
+        let num = Number(link.href.slice(-5, -4));
+        if (num === 10) num = 0;
+        link.href = `/favicon${num + 1}.svg`
+        setColors(colorlist[num]);
+    }
 
     return (
-        <svg viewBox='0 0 100 100' className="P_logo" onClick={() => setColors(randomColors())}>
+        <svg viewBox='0 0 100 100' className="P_logo" onClick={changeColors}>
             <defs>
                 <linearGradient id="gradient" gradientTransform="rotate(45)">
                     <stop stopColor={colors[0]} offset='30%' />
