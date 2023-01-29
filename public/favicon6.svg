@@ -14,15 +14,15 @@
 
     <defs>
         <linearGradient id="dark-gradient" gradientTransform="rotate(45)">
-            <stop stop-color="rgb(176, 236, 254)" offset='30%' />
+            <stop stop-color="rgb(176, 236, 254)" offset='0%' />
             <stop stop-color="rgb(101, 86, 179)" offset='100%' />
         </linearGradient>
     </defs>
 
     <defs>
         <linearGradient id="light-gradient" gradientTransform="rotate(45)">
-            <stop stop-color="silver" offset='30%' />
-            <stop stop-color="rgb(176, 236, 254)" offset='100%' />
+            <stop stop-color="rgb(176, 236, 254)" offset='30%' />
+            <stop stop-color="rgb(101, 86, 179)" offset='100%' />
         </linearGradient>
     </defs>
 

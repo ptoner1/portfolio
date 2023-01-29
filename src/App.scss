@@ -73,5 +73,11 @@
             height: calc(100% - 3rem);
             border-radius: 3px;
         }
+
+        .loading-spinner {
+            width: 70%;
+            height: min-content;
+            margin: 0 auto;
+        }
     }
 }
