@@ -1,6 +1,6 @@
-import test from './videos/test.mp4';
-import Lauterbrunnen from './videos/Lauterbrunnen.jpg';
 import { SpotifyDescription, ItemCrushDescription, ColorAppDescription, YelpcampDescription, ProfileDescription } from './descriptions';
+import { ProfilePic, spotify, itemcrush, colorpicker, yelpcamp, portfolio, todo } from './videos';
+import { itemcrushSubtitles, spotifySubtitles, portfolioSubtitles, colorappSubtitles, todoSubtitles, yelpcampSubtitles } from './videos/subtitles';
 
 export const data = [
     {
@@ -9,9 +9,9 @@ export const data = [
         name: 'about',
         Description: ProfileDescription,
         skills: ['javascript', 'react', 'front end development'],
-        img: Lauterbrunnen,
+        img: ProfilePic,
         repo: 'https://www.github.com/ptoner1',
-        url: null
+        url: '/scrollpainting'
     },
     {
         id: 2,
@@ -19,7 +19,8 @@ export const data = [
         name: 'spotifyapp',
         Description: SpotifyDescription,
         skills: ['js', 'nodejs', 'express', 'deployment', 'o-authentication', '3rd party API'],
-        video: test,
+        video: spotify,
+        subtitles: spotifySubtitles,
         repo: 'sort-my-liked-spotify',
         url: 'https://www.sort-spotify.com'
     },
@@ -29,17 +30,19 @@ export const data = [
         name: 'itemcrush',
         Description: ItemCrushDescription,
         skills: ['js', 'react', 'session storage'],
-        video: test,
+        video: itemcrush,
+        subtitles: itemcrushSubtitles,
         repo: 'item-crush',
         url: null
     },
     {
         id: 4,
-        title: 'Color App',
+        title: 'Color Palette Generator',
         name: 'colorapp',
         Description: ColorAppDescription,
         skills: ['js', 'react', 'material UI'],
-        video: test,
+        video: colorpicker,
+        subtitles: colorappSubtitles,
         repo: 'react-color-app',
         url: null
     },
@@ -49,7 +52,8 @@ export const data = [
         name: 'yelpcamp',
         Description: YelpcampDescription,
         skills: ['js', 'nodejs', 'express', 'mongodb', 'deployment', 'authorization & authentication', 'cookies'],
-        video: test,
+        video: yelpcamp,
+        subtitles: yelpcampSubtitles,
         repo: 'yelpcamp-webdev-course',
         url: null
     },
@@ -59,7 +63,8 @@ export const data = [
         name: 'todo',
         Description: () => 'Wanted to practice my knowledge of react and session storage.',
         skills: ['js', 'react', 'session storage'],
-        video: test,
+        video: todo,
+        subtitles: todoSubtitles,
         repo: 'react-todo',
         url: null
     },
@@ -69,8 +74,9 @@ export const data = [
         name: 'portfolio',
         Description: () => 'Learned about html videos for this website. Had fun styling everything.',
         skills: ['js', 'react', 'video', 'sass', 'deployment'],
-        video: test,
+        video: portfolio,
+        subtitles: portfolioSubtitles,
         repo: 'react-todo',
-        url: 'localhost:3000/portrait-animation#s'
+        url: '/scrollpainting'
     },
 ]

@@ -1,5 +1,4 @@
-import portrait from '../videos/portrait.jpg';
-import Lauterbrunnen from '../videos/Lauterbrunnen.jpg';
+import Lauterbrunnen from '../../videos/Lauterbrunnen.jpg';
 
 export default function Portrait({ screen }) {
 

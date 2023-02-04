@@ -8,7 +8,7 @@ export const ProfileDescription = () => (
         </p>
         <br />
         <p>
-            Since the fall of 2021, I've spent about 400 hours developing applications using
+            Since the fall of 2021, I've spent over 500 hours developing applications using
             HTML, CSS, Javascript, and Nodejs.
         </p>
         <br />

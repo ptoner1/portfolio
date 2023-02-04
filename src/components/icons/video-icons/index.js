@@ -7,3 +7,4 @@ export { TheaterClose } from './TheaterClose';
 export { Mute } from './Mute';
 export { VolumeHigh } from './VolumeHigh';
 export { VolumeLow } from './VolumeLow';
+export { ClosedCaptions } from './ClosedCaptions';

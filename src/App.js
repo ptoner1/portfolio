@@ -4,6 +4,7 @@ import Logo from './components/Logo.js';
 import { MainVideo, MainDescription, ProjectList, Portrait } from './components/main';
 import { colorlist } from './colors';
 import chickflip from './utilities/chickflip.gif'
+import { data } from './projectObjects';
 
 function App() {
 
@@ -11,6 +12,7 @@ function App() {
   const [screen, setScreen] = useState('small');
   const [project, setProject] = useState('about');
   const [loading, setLoading] = useState(false);
+  const projectData = data.filter(p => p.name === project);
 
 
   // spent an hour on this function.  I love the color palettes it returns.
@@ -64,7 +66,7 @@ function App() {
             ? <img src={chickflip} className="loading-spinner" alt="chicken skateboarding" />
             : project === 'about'
               ? <Portrait screen={screen} />
-              : <MainVideo screen={screen} setScreen={setScreen} />
+              : <MainVideo screen={screen} setScreen={setScreen} project={projectData} />
           }
           <MainDescription name={project} screen={screen} />
           <ProjectList screen={screen} setProject={setProject} currentProject={project} />

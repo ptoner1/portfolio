@@ -2,6 +2,7 @@ import github_white from '../icons/nav-icons/github_white.png'
 import new_tab_icon from '../icons/nav-icons/new_tab_icon.png'
 import { data } from '../../projectObjects';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function MainDescription({ name, screen }) {

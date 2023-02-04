@@ -1,10 +1,7 @@
-import test from '../videos/test.mp4';
-import trailmap from '../videos/trailmap.jpg';
-
-import { FullClose, Fullscreen, Mute, Pause, Play, TheaterClose, Theaterscreen, VolumeHigh, VolumeLow } from '../icons/video-icons';
+import { ClosedCaptions, FullClose, Fullscreen, Mute, Pause, Play, TheaterClose, Theaterscreen, VolumeHigh, VolumeLow } from '../icons/video-icons';
 import { useEffect, useState } from 'react';
 
-export default function MainVideo({ screen, setScreen }) {
+export default function MainVideo({ screen, setScreen, project }) {
 
     const video = document.querySelector("video");
 
@@ -14,7 +11,6 @@ export default function MainVideo({ screen, setScreen }) {
     const [currentTime, setCurrentTime] = useState('0:00');
     const [duration, setDuration] = useState('0:00');
     const [animating, setAnimating] = useState(false);
-
 
     // Play / Pause functionality
     function togglePlay() {
@@ -48,6 +44,8 @@ export default function MainVideo({ screen, setScreen }) {
             case "m":
                 handleMute();
                 break
+            case 'c':
+                toggleClosedCaptions();
         }
     })
 
@@ -121,8 +119,23 @@ export default function MainVideo({ screen, setScreen }) {
     }, [])
 
 
-    // Captions
+    // Closed Captions
 
+    useEffect(() => {
+        const video = document.querySelector("video");
+
+        video.textTracks[0].mode = 'hidden'
+    }, [])
+
+    function toggleClosedCaptions() {
+        const video = document.querySelector('video');
+        const visible = video.textTracks[0].mode === 'showing';
+        if (visible) {
+            video.textTracks[0].mode = 'hidden'
+        } else {
+            video.textTracks[0].mode = 'showing'
+        }
+    }
 
     // Playback Speed
 
@@ -154,13 +167,13 @@ export default function MainVideo({ screen, setScreen }) {
 
         function handleTimelineUpdate(e) {
             const percent = Math.min(Math.max(0, e.x - rect.x), rect.width) / rect.width;
-            const previewImgNumber = Math.max(1, Math.floor((percent * duration) / 10));
-            previewImg.src = trailmap;
+            // const previewImgNumber = Math.max(1, Math.floor((percent * duration) / 10));
+            // previewImg.src = trailmap;
             timeline.style.setProperty('--preview-position', percent);
 
             if (isScrubbing) {
                 e.preventDefault()
-                thumbnail.src = trailmap;
+                // thumbnail.src = trailmap;
                 timeline.style.setProperty('--progress-position', percent)
             }
         }
@@ -197,7 +210,7 @@ export default function MainVideo({ screen, setScreen }) {
 
                 <div className='video__controls-timeline'>
                     <div className='timeline'>
-                        <img className='preview-img' />
+                        {/* <img className='preview-img' /> */}
                         <div className='thumb-indicator' />
                     </div>
                 </div>
@@ -243,6 +256,10 @@ export default function MainVideo({ screen, setScreen }) {
                         1x
                     </button>
 
+                    <button onClick={toggleClosedCaptions} className='btn'>
+                        <ClosedCaptions />
+                    </button>
+
                     {screen === 'fullscreen' ? '' :
                         (
                             <button onClick={() => toggleScreen('theater')} className='btn btn__theater-screen'>
@@ -255,8 +272,8 @@ export default function MainVideo({ screen, setScreen }) {
                     </button>
                 </div>
             </div>
-            <video src={test} onClick={togglePlay} >
-                <track kind='captions' srcLang='en' src='' />
+            <video src={project[0].video} onClick={togglePlay} >
+                <track kind='captions' srcLang='en' src={project[0].subtitles} />
             </video>
         </div>
     )
