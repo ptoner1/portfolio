@@ -6,5 +6,6 @@
 </br>
 <h1>Tweaking the Code</h1>
 <p>
-  The MainVideo component is a bit of a Frankenstein, and there's possibly too much React statefulness.
+  The MainVideo component is a bit of a Frankenstein, and there's possibly too much React statefulness. 
+  Making changes may involve refactoring.
 </p>
