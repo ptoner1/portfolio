@@ -4,8 +4,7 @@
   Page colors can be seen in the video controls as well as the favicon.  You can look at the final product 
   <a href="https://www.paulyprograms.com" target="_blank">
     here
-  </a>
-  .
+  </a>.
 </p>
 </br>
 <h1>Tweaking the Code</h1>
