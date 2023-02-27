@@ -2,6 +2,9 @@
 <p>
   Built to show a portfolio of projects that feature video.  Stylistically, it's not trying to be glitzy, but the universal, changing color theme is a highlight.  
   Page colors can be seen in the video controls as well as the favicon.  You can look at the final product here: https://www.paulyprograms.com.
+  <a href="https://www.paulyprograms.com" target="blank">
+    here
+  </a>
 </p>
 </br>
 <h1>Tweaking the Code</h1>
