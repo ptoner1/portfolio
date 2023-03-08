@@ -1,0 +1,57 @@
+@keyframes slide-right {
+    from {
+        width: 550px;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes slide-back {
+    0% {
+        max-width: calc(100% + 21rem);
+        width: calc(100% + 21rem);
+        background-color: $color-black-light;
+        margin-left: 7vw;
+    }
+
+    50% {
+        background-color: $color-black-light;
+
+    }
+
+    100% {
+        margin-left: 2rem;
+        max-width: 750px;
+        width: 100%;
+        background-color: $color-grey-dark-3;
+    }
+}
+
+@keyframes delay-height {
+    0% {
+        height: 50%;
+        align-self: end;
+    }
+
+    50% {
+        height: 50%;
+    }
+
+    100% {
+        height: 100%;
+        align-self: end;
+    }
+}
+
+
+@keyframes slide-underline {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}

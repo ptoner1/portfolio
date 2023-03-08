@@ -1,0 +1,32 @@
+@import 'styles/sass/variables';
+@import 'styles/sass/animations';
+@import 'styles/sass/utils';
+
+
+// App.scss contains imports from the components directory
+@import 'App.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: $color-grey-light-3;
+
+  background-color: $color-grey-dark-3;
+
+  line-height: 1.6;
+  letter-spacing: .8px;
+  font-family: 'Inconsolata', 'Roboto', sans-serif;
+}

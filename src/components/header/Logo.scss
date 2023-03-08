@@ -1,0 +1,14 @@
+.P_logo {
+    width: 6rem;
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+        scale: 1.1;
+    }
+
+    &:active,
+    &:focus {
+        scale: 1.05;
+    }
+}
